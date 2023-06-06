@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useAcquireInfo = () => {
-  const [authors, setProducts] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -14,7 +14,7 @@ const useAcquireInfo = () => {
           throw new Error("Failed to fetch poetry data.");
         }
         const data = await response.json();
-        setProducts(data);
+        setAuthors(data);
       } catch (err) {
         setError(err);
       } finally {
